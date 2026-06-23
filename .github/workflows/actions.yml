@@ -125,10 +125,10 @@ jobs:
       - name: Run k6 load test
         run: |
 
-          mkdir -p k6-env/results
+          mkdir -p results
 
           k6 run \
-          --out json=k6-env/results/resultado.json \
+          --out json=results/resultado.json \
           k6-env/pet_clinic_test.js
 
 
