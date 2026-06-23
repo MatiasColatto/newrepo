@@ -67,6 +67,14 @@ jobs:
           cd spring-petclinic
           mvn clean install -DskipTests
 
+      - name: Debug spring-petclinic contents
+        run: |
+          echo "=== ROOT ==="
+          ls -la
+      
+          echo "=== SPRING ==="
+          ls -la spring-petclinic
+
       # =========================
       # Levantar Spring Boot
       # =========================
