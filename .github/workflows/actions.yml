@@ -45,8 +45,13 @@ jobs:
           java-version: '21'
           distribution: temurin
 
-      - name: Prepare mvnw
-        run: find . -name mvnw -exec chmod +x {} \;
+      # =========================
+
+      - name: Debug mvnw location
+        run: |
+         echo "Buscando mvnw..."
+         find . -name mvnw
+
       
       # =========================
       # Maven Wrapper
@@ -60,6 +65,8 @@ jobs:
       # equivalente a:
       # start cmd /k mvnw spring-boot:run
       # =========================
+
+      
       - name: Start Spring Petclinic
         run: |
           cd spring-petclinic
