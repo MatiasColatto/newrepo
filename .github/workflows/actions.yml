@@ -35,7 +35,7 @@ jobs:
           pwd
           ls
           ls spring-petclinica || echo "NO EXISTE"
-    
+     
       # =========================
       # Java 21
       # =========================
