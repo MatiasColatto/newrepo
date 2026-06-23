@@ -34,7 +34,7 @@ jobs:
         run: |
           pwd
           ls
-          ls spring-petclinic || echo "NO EXISTE"
+          ls spring-petclinica || echo "NO EXISTE"
     
       # =========================
       # Java 21
@@ -45,14 +45,6 @@ jobs:
           java-version: '21'
           distribution: temurin
 
-      # =========================
-
-      - name: Debug mvnw location
-        run: |
-         echo "Buscando mvnw..."
-         find . -name mvnw
-
-      
     # =========================
       # Maven (IMPORTANTE: reemplaza mvnw)
       # =========================
@@ -62,17 +54,17 @@ jobs:
       # =========================
       # Build Spring Boot
       # =========================
-      - name: Debug spring-petclinic contents
+      - name: Debug spring-petclinica contents
         run: |
           echo "=== ROOT ==="
           ls -la
       
           echo "=== SPRING ==="
-          ls -la spring-petclinic
+          ls -la spring-petclinica
           
-      - name: Build Spring Petclinic
+      - name: Build Spring Petclinica
         run: |
-          cd spring-petclinic
+          cd spring-petclinica
           mvn clean install -DskipTests
 
 
@@ -81,7 +73,7 @@ jobs:
       # =========================
       - name: Start Spring Boot
         run: |
-          cd spring-petclinic
+          cd spring-petclinica
           nohup mvn spring-boot:run > spring.log 2>&1 &
 
 
