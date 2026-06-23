@@ -94,6 +94,10 @@ jobs:
 
           echo "Spring Boot listo"
 
+      - name: Install Semgrep
+        run: |
+          python -m pip install --upgrade pip
+          pip install semgrep
 
       # =========================
       # Semgrep CI
