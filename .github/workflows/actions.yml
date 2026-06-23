@@ -45,6 +45,13 @@ jobs:
           java-version: '21'
           distribution: temurin
 
+      - name: Prepare mvnw
+        run: find . -name mvnw -exec chmod +x {} \;
+      
+      - name: Build Spring
+        run: |
+          cd spring-petclinic
+          ./mvnw clean install
 
       # =========================
       # Maven Wrapper
