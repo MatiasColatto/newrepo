@@ -53,26 +53,27 @@ jobs:
          find . -name mvnw
 
       
+    # =========================
+      # Maven (IMPORTANTE: reemplaza mvnw)
       # =========================
-      # Maven Wrapper
-      # =========================
-      - name: Give permission to mvnw
-        run: chmod +x spring-petclinic/mvnw
+      - name: Install Maven
+        run: sudo apt-get update && sudo apt-get install -y maven
 
+      # =========================
+      # Build Spring Boot
+      # =========================
+      - name: Build Spring Petclinic
+        run: |
+          cd spring-petclinic
+          mvn clean install -DskipTests
 
       # =========================
       # Levantar Spring Boot
-      # equivalente a:
-      # start cmd /k mvnw spring-boot:run
       # =========================
-
-      
-      - name: Start Spring Petclinic
+      - name: Start Spring Boot
         run: |
           cd spring-petclinic
-
-          nohup ./mvnw spring-boot:run \
-          > spring.log 2>&1 &
+          nohup mvn spring-boot:run > spring.log 2>&1 &
 
 
       # =========================
