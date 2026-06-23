@@ -62,11 +62,6 @@ jobs:
       # =========================
       # Build Spring Boot
       # =========================
-      - name: Build Spring Petclinic
-        run: |
-          cd spring-petclinic
-          mvn clean install -DskipTests
-
       - name: Debug spring-petclinic contents
         run: |
           echo "=== ROOT ==="
@@ -74,6 +69,12 @@ jobs:
       
           echo "=== SPRING ==="
           ls -la spring-petclinic
+          
+      - name: Build Spring Petclinic
+        run: |
+          cd spring-petclinic
+          mvn clean install -DskipTests
+
 
       # =========================
       # Levantar Spring Boot
