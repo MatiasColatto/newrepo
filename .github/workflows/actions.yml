@@ -145,7 +145,7 @@ jobs:
       # =========================
       - name: SonarQube Analysis
         run: |
-          cd spring-petclinic
+          cd spring-petclinica
 
           ./mvnw sonar:sonar \
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} \
