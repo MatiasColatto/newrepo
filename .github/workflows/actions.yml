@@ -20,6 +20,8 @@ jobs:
 
     steps:
 
+
+
       # =========================
       # Descargar código
       # =========================
@@ -27,8 +29,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-
+      
+      - name: Check folders
+        run: |
+          pwd
+          ls
+          ls spring-petclinic || echo "NO EXISTE"
+    
       # =========================
       # Java 21
       # =========================
