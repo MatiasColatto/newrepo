@@ -138,12 +138,12 @@ jobs:
       - name: Generate k6 report
         run: |
           python k6-env/generar_reporte.py
-      
+     
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         with:
           name: k6-html-report
-          path: k6-env/results/*.html
+          path: reporte_k6.html
 
       # =========================
       # SonarQube Server
